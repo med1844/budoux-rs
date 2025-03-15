@@ -34,13 +34,13 @@ fn main() {
             // Load model from json file and split sentences using the loaded model.
             let file = File::open(x).unwrap();
             let reader = BufReader::new(file);
-            let model: budoux::Model = serde_json::from_reader(reader).unwrap();
-            budoux::parse(&model, &input)
+            let model = budoux::Model::from_reader(reader).unwrap();
+            model.parse(&input)
         }
         None => {
             // Split sentences with internal model.
             let model = budoux::models::default_japanese_model();
-            budoux::parse(model, &input)
+            model.parse(&input)
         }
     };
 

@@ -30,7 +30,7 @@ impl Component for Model {
 
     fn view(&self, ctx: &Context<Self>) -> Html {
         let model = budoux::models::default_japanese_model();
-        let words = budoux::parse(model, &self.input);
+        let words = model.parse(&self.input);
 
         html! {
             <div>
