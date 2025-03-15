@@ -10,8 +10,6 @@
 
 use std::{collections::HashMap, ops::Range};
 
-mod unicode_blocks;
-
 /// models provides trained machine learning model.
 pub mod models;
 
